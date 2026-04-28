@@ -3,62 +3,129 @@ export type StreamingPlatform =
   | "youtube"
   | "twitch"
   | "fuwacchi"
-  | "niconico";
+  | "niconico"
+  | "twitcasting";
 
 export type SocialPlatform = "x" | "instagram" | "tiktok" | "discord";
+
+export type StreamingHandle = {
+  platform: StreamingPlatform;
+  username: string;
+  url: string;
+};
 
 export type Member = {
   slug: string;
   name: string;
-  handle: string;
+  handle?: string;
   role: string;
   bio: string;
   avatar: string;
-  streamingPlatforms: { platform: StreamingPlatform; url: string }[];
+  streamingPlatforms: StreamingHandle[];
   socials: { platform: SocialPlatform; url: string }[];
 };
 
+const placeholderBio = "プロフィール準備中。";
+const placeholderRole = "裏キック団 / メンバー";
+
 export const members: Member[] = [
   {
-    slug: "noir",
-    name: "ノワール",
-    handle: "@noir_urk",
-    role: "リーダー / 雑談配信",
-    bio: "深夜帯の雑談配信を主軸に、リスナーとの距離感が近いトークで知られる裏キック団のリーダー格。",
-    avatar: "https://picsum.photos/seed/urakick-noir/600/600",
-    streamingPlatforms: [
-      { platform: "kick", url: "https://kick.com/" },
-      { platform: "youtube", url: "https://youtube.com/" },
-    ],
-    socials: [{ platform: "x", url: "https://x.com/" }],
+    slug: "zenichi",
+    name: "全一",
+    role: placeholderRole,
+    bio: placeholderBio,
+    avatar: "https://picsum.photos/seed/urakick-zenichi/600/600",
+    streamingPlatforms: [],
+    socials: [],
   },
   {
-    slug: "kvn",
-    name: "ケヴン",
-    handle: "@kvn_urk",
-    role: "ゲーム配信 / FPS",
-    bio: "FPS中心のゲーム配信者。荒っぽい実況と高難度プレイで毎晩リスナーを煽り倒している。",
-    avatar: "https://picsum.photos/seed/urakick-kvn/600/600",
-    streamingPlatforms: [
-      { platform: "kick", url: "https://kick.com/" },
-      { platform: "twitch", url: "https://twitch.tv/" },
-    ],
-    socials: [{ platform: "x", url: "https://x.com/" }],
+    slug: "kuru",
+    name: "くる",
+    role: placeholderRole,
+    bio: placeholderBio,
+    avatar: "https://picsum.photos/seed/urakick-kuru/600/600",
+    streamingPlatforms: [],
+    socials: [],
   },
   {
-    slug: "rei",
-    name: "ゼロレイ",
-    handle: "@zero_rei",
-    role: "音楽配信 / DJ",
-    bio: "週末のDJミックス配信を担当。Y2K〜ハイパーポップを軸にしたセレクトで深夜のフロアを作る。",
-    avatar: "https://picsum.photos/seed/urakick-rei/600/600",
-    streamingPlatforms: [
-      { platform: "youtube", url: "https://youtube.com/" },
-      { platform: "fuwacchi", url: "https://whowatch.tv/" },
-    ],
-    socials: [
-      { platform: "x", url: "https://x.com/" },
-      { platform: "instagram", url: "https://instagram.com/" },
-    ],
+    slug: "eseaka-nyan",
+    name: "エセアカにゃん",
+    role: placeholderRole,
+    bio: placeholderBio,
+    avatar: "https://picsum.photos/seed/urakick-eseaka/600/600",
+    streamingPlatforms: [],
+    socials: [],
+  },
+  {
+    slug: "seki-shingo",
+    name: "関慎吾",
+    role: placeholderRole,
+    bio: placeholderBio,
+    avatar: "https://picsum.photos/seed/urakick-seki/600/600",
+    streamingPlatforms: [],
+    socials: [],
+  },
+  {
+    slug: "occhichi-hime",
+    name: "おっちち姫",
+    role: placeholderRole,
+    bio: placeholderBio,
+    avatar: "https://picsum.photos/seed/urakick-occhichi/600/600",
+    streamingPlatforms: [],
+    socials: [],
+  },
+  {
+    slug: "erupi",
+    name: "えるぴ",
+    role: placeholderRole,
+    bio: placeholderBio,
+    avatar: "https://picsum.photos/seed/urakick-erupi/600/600",
+    streamingPlatforms: [],
+    socials: [],
+  },
+  {
+    slug: "aizawa-koki",
+    name: "相沢香輝",
+    role: placeholderRole,
+    bio: placeholderBio,
+    avatar: "https://picsum.photos/seed/urakick-aizawa/600/600",
+    streamingPlatforms: [],
+    socials: [],
+  },
+  {
+    slug: "murohi",
+    name: "むろひ",
+    role: placeholderRole,
+    bio: placeholderBio,
+    avatar: "https://picsum.photos/seed/urakick-murohi/600/600",
+    streamingPlatforms: [],
+    socials: [],
+  },
+  {
+    slug: "torikara",
+    name: "とりから",
+    role: placeholderRole,
+    bio: placeholderBio,
+    avatar: "https://picsum.photos/seed/urakick-torikara/600/600",
+    streamingPlatforms: [],
+    socials: [],
+  },
+  {
+    slug: "endy",
+    name: "エンディー",
+    role: placeholderRole,
+    bio: placeholderBio,
+    avatar: "https://picsum.photos/seed/urakick-endy/600/600",
+    streamingPlatforms: [],
+    socials: [],
+  },
+  {
+    slug: "kotacche",
+    name: "こたっちぇ",
+    role: placeholderRole,
+    bio: placeholderBio,
+    avatar: "https://picsum.photos/seed/urakick-kotacche/600/600",
+    streamingPlatforms: [],
+    socials: [],
   },
 ];
