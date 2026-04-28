@@ -5,38 +5,48 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-border/60">
+    <section className="relative min-h-svh w-full overflow-hidden border-b border-border/60">
       <video
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         poster="/hero-poster.jpg"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-screen"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-55"
       >
-        <source src="/hero.webm" type="video/webm" />
         <source src="/hero.mp4" type="video/mp4" />
       </video>
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#0b0d0f] via-[#0b0d0f]/70 to-[#131517]" />
       <div
-        className="pointer-events-none absolute inset-0 opacity-60"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 30% 20%, rgba(83,252,24,0.18), transparent 55%), radial-gradient(ellipse at 80% 80%, rgba(255,77,210,0.12), transparent 55%)",
+            "linear-gradient(180deg, rgba(11,13,15,0.35) 0%, rgba(11,13,15,0.55) 60%, rgba(11,13,15,0.95) 100%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at 25% 75%, rgba(83,252,24,0.18), transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(255,77,210,0.10), transparent 50%)",
         }}
       />
 
-      <div className="relative mx-auto flex min-h-[72vh] max-w-7xl flex-col items-start justify-center gap-6 px-4 py-24 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-svh max-w-7xl flex-col items-start justify-end gap-6 px-4 pb-16 pt-24 sm:px-6 sm:pb-20 lg:px-8 lg:pb-28">
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-5xl font-black leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl"
+          transition={{ duration: 0.7 }}
+          className="text-[16vw] font-black leading-[0.9] tracking-tight sm:text-[12vw] lg:text-[10rem]"
         >
-          <span className="block text-kick-soft">URAKICK</span>
-          <span className="mt-3 block text-2xl font-bold text-foreground/85 sm:text-3xl">
+          <span className="block text-kick-soft drop-shadow-[0_4px_24px_rgba(83,252,24,0.4)]">
+            URAKICK
+          </span>
+          <span className="mt-2 block text-2xl font-bold text-foreground/90 sm:text-3xl lg:text-4xl">
             裏キック団
           </span>
         </motion.h1>
@@ -44,8 +54,8 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-2xl text-base leading-relaxed text-foreground/85 sm:text-lg"
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="max-w-2xl text-base leading-relaxed text-foreground/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] sm:text-lg lg:text-xl"
         >
           ふわっちを主に活動しているメンバーが、
           <span className="text-kick font-bold">Kick</span>
@@ -57,18 +67,18 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
           className="flex flex-wrap gap-3 pt-2"
         >
           <Link
             href="/members"
-            className="rounded-md border border-[var(--accent-kick)]/60 bg-[var(--accent-kick)]/10 px-6 py-3 text-sm font-bold tracking-wider text-[var(--accent-kick)] transition-all hover:bg-[var(--accent-kick)]/20"
+            className="rounded-md border border-[var(--accent-kick)]/70 bg-[var(--accent-kick)]/15 px-6 py-3 text-sm font-bold tracking-wider text-[var(--accent-kick)] transition-all hover:bg-[var(--accent-kick)]/25 sm:text-base"
           >
             MEMBERS →
           </Link>
           <Link
             href="/rules"
-            className="rounded-md border border-border bg-card/60 px-6 py-3 text-sm font-bold tracking-wider text-foreground/85 transition-all hover:border-foreground hover:text-foreground"
+            className="rounded-md border border-border bg-card/80 px-6 py-3 text-sm font-bold tracking-wider text-foreground/90 backdrop-blur transition-all hover:border-foreground hover:text-foreground sm:text-base"
           >
             RULES
           </Link>
