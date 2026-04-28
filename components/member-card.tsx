@@ -109,11 +109,11 @@ export function MemberCard({
 
       <div className="flex flex-1 flex-col gap-2 p-4">
         <div className="min-w-0">
-          <h3 className="truncate text-lg font-bold tracking-tight">
+          <h3 className="font-display text-2xl leading-tight text-foreground sm:text-3xl">
             {member.name}
           </h3>
           {member.handle ? (
-            <p className="truncate font-mono text-xs text-muted-foreground">
+            <p className="mt-1 truncate font-mono text-xs text-muted-foreground">
               {member.handle}
             </p>
           ) : null}
