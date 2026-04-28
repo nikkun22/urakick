@@ -53,8 +53,8 @@ export function MemberCard({
   return (
     <article
       className={cn(
-        "card-elevated group relative flex flex-col overflow-hidden rounded-lg bg-card",
-        status.isLive && "live-pulse",
+        "group relative flex flex-col overflow-hidden rounded-lg bg-card",
+        status.isLive ? "live-border-red" : "card-elevated",
       )}
     >
       <div className="relative aspect-square overflow-hidden">
