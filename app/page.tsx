@@ -77,7 +77,7 @@ export default async function Home() {
             href="/members"
             className="rounded-md border border-[var(--accent-kick)]/60 bg-[var(--accent-kick)]/10 px-5 py-2.5 text-sm font-bold tracking-wider text-[var(--accent-kick)] transition-all hover:bg-[var(--accent-kick)]/20"
           >
-            メンバー一覧 →
+            メンバー →
           </Link>
         </div>
       </section>

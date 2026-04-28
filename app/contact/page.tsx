@@ -43,7 +43,7 @@ export default function ContactPage() {
               href="/members"
               className="inline-flex items-center gap-2 rounded-md border border-[var(--accent-kick)]/60 bg-[var(--accent-kick)]/15 px-5 py-3 text-sm font-bold tracking-wider text-[var(--accent-kick)] transition-all hover:bg-[var(--accent-kick)]/25"
             >
-              メンバー一覧から探す →
+              メンバーから探す →
             </Link>
           </div>
         </article>

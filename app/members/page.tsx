@@ -8,7 +8,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "MEMBERS / 裏キック団",
   description:
-    "裏キック団 全メンバー一覧。配信中のメンバーは LIVE バッジ付きで表示し、クリックでそのまま配信ページへ移動できます。",
+    "裏キック団 メンバー。配信中のメンバーは LIVE バッジ付きで表示し、クリックでそのまま配信ページへ移動できます。",
 };
 
 export default async function MembersPage() {
@@ -29,7 +29,7 @@ export default async function MembersPage() {
           MEMBERS
         </p>
         <h1 className="mt-2 text-4xl font-black tracking-tight sm:text-5xl">
-          メンバー一覧
+          メンバー
         </h1>
         <p className="mt-3 text-sm text-muted-foreground">
           配信中のメンバーは{" "}
