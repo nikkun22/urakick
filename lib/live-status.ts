@@ -10,7 +10,6 @@ export type LiveStatus = {
 };
 
 const FETCH_TIMEOUT_MS = 4000;
-const REVALIDATE_SECONDS = 60;
 
 async function fetchWithTimeout(url: string): Promise<Response | null> {
   const controller = new AbortController();
@@ -24,7 +23,7 @@ async function fetchWithTimeout(url: string): Promise<Response | null> {
         Accept: "application/json, text/plain, */*",
         "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
       },
-      next: { revalidate: REVALIDATE_SECONDS },
+      cache: "no-store",
     });
     return res;
   } catch {

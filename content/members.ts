@@ -19,22 +19,21 @@ export type Member = {
   name: string;
   handle?: string;
   role: string;
-  bio: string;
+  bio?: string;
   avatar: string;
   streamingPlatforms: StreamingHandle[];
   socials: { platform: SocialPlatform; url: string }[];
 };
 
-const placeholderBio = "プロフィール準備中。";
 const memberRole = "裏キック団 / メンバー";
+const avatarFor = (xHandle: string) => `https://unavatar.io/x/${xHandle}`;
 
 export const members: Member[] = [
   {
     slug: "zenichi",
     name: "全一",
-    role: "裏キック団 / 会長",
-    bio: placeholderBio,
-    avatar: "https://picsum.photos/seed/urakick-zenichi/600/600",
+    role: "裏キック団 / 団長",
+    avatar: avatarFor("zenitu1217"),
     streamingPlatforms: [
       {
         platform: "kick",
@@ -48,8 +47,7 @@ export const members: Member[] = [
     slug: "kuru",
     name: "くる",
     role: memberRole,
-    bio: placeholderBio,
-    avatar: "https://picsum.photos/seed/urakick-kuru/600/600",
+    avatar: avatarFor("kurupaccho"),
     streamingPlatforms: [
       {
         platform: "kick",
@@ -63,8 +61,7 @@ export const members: Member[] = [
     slug: "eseaka-nyan",
     name: "エセアカにゃん",
     role: memberRole,
-    bio: placeholderBio,
-    avatar: "https://picsum.photos/seed/urakick-eseaka/600/600",
+    avatar: avatarFor("eseakanyan2525"),
     streamingPlatforms: [
       {
         platform: "kick",
@@ -78,8 +75,7 @@ export const members: Member[] = [
     slug: "seki-shingo",
     name: "関慎吾",
     role: memberRole,
-    bio: placeholderBio,
-    avatar: "https://picsum.photos/seed/urakick-seki/600/600",
+    avatar: avatarFor("supersekishingo"),
     streamingPlatforms: [
       {
         platform: "kick",
@@ -93,8 +89,7 @@ export const members: Member[] = [
     slug: "occhichi-hime",
     name: "おっちち姫",
     role: memberRole,
-    bio: placeholderBio,
-    avatar: "https://picsum.photos/seed/urakick-occhichi/600/600",
+    avatar: avatarFor("akirametai_hime"),
     streamingPlatforms: [
       {
         platform: "kick",
@@ -108,8 +103,7 @@ export const members: Member[] = [
     slug: "erupi",
     name: "えるぴ",
     role: memberRole,
-    bio: placeholderBio,
-    avatar: "https://picsum.photos/seed/urakick-erupi/600/600",
+    avatar: avatarFor("erupi1022"),
     streamingPlatforms: [
       {
         platform: "kick",
@@ -123,8 +117,7 @@ export const members: Member[] = [
     slug: "aizawa-koki",
     name: "相沢香輝",
     role: memberRole,
-    bio: placeholderBio,
-    avatar: "https://picsum.photos/seed/urakick-aizawa/600/600",
+    avatar: avatarFor("Kana_A369"),
     streamingPlatforms: [
       {
         platform: "kick",
@@ -138,8 +131,7 @@ export const members: Member[] = [
     slug: "murohi",
     name: "奇天烈むろひ",
     role: memberRole,
-    bio: placeholderBio,
-    avatar: "https://picsum.photos/seed/urakick-murohi/600/600",
+    avatar: avatarFor("kiteretsumurohi"),
     streamingPlatforms: [
       {
         platform: "kick",
@@ -153,8 +145,7 @@ export const members: Member[] = [
     slug: "torikara",
     name: "とりから",
     role: memberRole,
-    bio: placeholderBio,
-    avatar: "https://picsum.photos/seed/urakick-torikara/600/600",
+    avatar: avatarFor("torikara8325"),
     streamingPlatforms: [
       {
         platform: "kick",
@@ -168,8 +159,7 @@ export const members: Member[] = [
     slug: "endy",
     name: "エンディー",
     role: memberRole,
-    bio: placeholderBio,
-    avatar: "https://picsum.photos/seed/urakick-endy/600/600",
+    avatar: avatarFor("endy_yokosuka"),
     streamingPlatforms: [
       {
         platform: "kick",
@@ -183,8 +173,7 @@ export const members: Member[] = [
     slug: "kotacche",
     name: "こたっちぇ",
     role: memberRole,
-    bio: placeholderBio,
-    avatar: "https://picsum.photos/seed/urakick-kotacche/600/600",
+    avatar: avatarFor("kotakota4642"),
     streamingPlatforms: [
       {
         platform: "kick",

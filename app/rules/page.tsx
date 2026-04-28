@@ -57,7 +57,7 @@ export default function RulesPage() {
       </ol>
 
       <div className="mt-16 border-t border-border/60 pt-6 text-xs tracking-widest text-muted-foreground/70">
-        制定：裏キック団 / 全一会長
+        制定：裏キック団 / 全一団長
       </div>
     </section>
   );

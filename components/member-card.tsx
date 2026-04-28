@@ -67,7 +67,6 @@ export function MemberCard({
             "object-cover transition-transform duration-500 group-hover:scale-105",
             !status.isLive && "saturate-[0.7] group-hover:saturate-100",
           )}
-          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/20 to-transparent" />
 
@@ -109,7 +108,7 @@ export function MemberCard({
 
       <div className="flex flex-1 flex-col gap-2 p-4">
         <div className="min-w-0">
-          <h3 className="font-display text-2xl leading-tight text-foreground sm:text-3xl">
+          <h3 className="font-display text-3xl leading-tight text-foreground sm:text-4xl">
             {member.name}
           </h3>
           {member.handle ? (
@@ -127,11 +126,11 @@ export function MemberCard({
           <p className="line-clamp-2 text-sm text-foreground/90">
             🎙 {status.title}
           </p>
-        ) : (
+        ) : member.bio ? (
           <p className="line-clamp-2 text-sm text-muted-foreground">
             {member.bio}
           </p>
-        )}
+        ) : null}
 
         {status.isLive && status.liveUrl ? (
           <a

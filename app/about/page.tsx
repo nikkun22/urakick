@@ -21,7 +21,7 @@ export default function AboutPage() {
       <div className="mt-10 space-y-5 text-base leading-relaxed text-foreground/85">
         <p>
           裏キック団は、ふわっちを主に活動しているメンバーが Kick
-          を盛り上げるために、全一会長が設立した配信者集団です。
+          を盛り上げるために、全一団長が設立した配信者集団です。
         </p>
         <p>
           メンバーはそれぞれの配信スタイルで Kick

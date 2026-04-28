@@ -26,12 +26,12 @@ const rocknrollOne = RocknRoll_One({
 export const metadata: Metadata = {
   title: "The Back Kick Gang / 裏キック団 公式サイト",
   description:
-    "ふわっちを主に活動しているメンバーが Kick を盛り上げるために、全一会長が設立した配信者集団。",
+    "ふわっちを主に活動しているメンバーが Kick を盛り上げるために、全一団長が設立した配信者集団。",
   metadataBase: new URL("https://urakick.vercel.app"),
   openGraph: {
     title: "The Back Kick Gang / 裏キック団",
     description:
-      "ふわっちを主に活動しているメンバーが Kick を盛り上げるために、全一会長が設立した配信者集団。",
+      "ふわっちを主に活動しているメンバーが Kick を盛り上げるために、全一団長が設立した配信者集団。",
     type: "website",
   },
 };

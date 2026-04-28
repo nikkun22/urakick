@@ -34,7 +34,9 @@ export default function ContactPage() {
             </h2>
           </header>
           <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-            メンバー個人への応援メッセージ、ファンレター、その他個別のご連絡は
+            メンバー個人への応援メッセージ、ファンレター、
+            <br />
+            その他個別のご連絡は
             <span className="mx-1 font-bold text-foreground">X の DM</span>
             よりお願いします。
           </p>
@@ -58,7 +60,9 @@ export default function ContactPage() {
             </h2>
           </header>
           <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-            裏キック団全体に関するお問い合わせ、案件のご相談、コラボレーションについてはこちら。
+            裏キック団全体に関するお問い合わせ、
+            <br />
+            案件のご相談、コラボレーションについてはこちら。
           </p>
           <div className="mt-auto">
             <a
@@ -70,7 +74,7 @@ export default function ContactPage() {
               <XIcon size={18} />
               <span>{CHAIRMAN_X_HANDLE}</span>
               <span className="text-xs text-muted-foreground">
-                （全一会長 X）
+                （全一団長 X）
               </span>
             </a>
           </div>

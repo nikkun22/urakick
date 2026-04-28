@@ -1,9 +1,5 @@
 import { Hero } from "@/components/hero";
-import { members } from "@/content/members";
-import { getLiveStatusBulk } from "@/lib/live-status";
-import Link from "next/link";
-
-export const revalidate = 60;
+import { LiveStatusCard } from "@/components/live-status-card";
 
 const ACTIVITIES = [
   {
@@ -15,15 +11,12 @@ const ACTIVITIES = [
     body: "配信終了時のレイドパスを通じて、メンバー同士で視聴者を相互に送り合う応援文化を大切にしています。誕生日メンバーへのバースデーレイドパスは恒例。",
   },
   {
-    title: "全一会長を中心とした運営",
-    body: "全一会長を中心に、メンバー同士で揉めない・配信内での暴力行為禁止など、明確なルールを設けて健全な活動を継続しています。",
+    title: "全一団長を中心とした運営",
+    body: "全一団長を中心に、メンバー同士で揉めない・配信内での暴力行為禁止など、明確なルールを設けて健全な活動を継続しています。",
   },
 ];
 
-export default async function Home() {
-  const statusMap = await getLiveStatusBulk(members);
-  const liveCount = Array.from(statusMap.values()).filter((s) => s.isLive).length;
-
+export default function Home() {
   return (
     <>
       <Hero />
@@ -54,32 +47,7 @@ export default async function Home() {
       </section>
 
       <section className="mx-auto w-full max-w-5xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="card-elevated flex flex-col items-start justify-between gap-4 rounded-lg bg-card p-6 sm:flex-row sm:items-center sm:p-8">
-          <div>
-            <p className="text-xs font-bold tracking-[0.3em] text-[var(--accent-kick)]">
-              LIVE STATUS
-            </p>
-            <p className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">
-              {liveCount > 0 ? (
-                <span>
-                  <span className="text-[var(--accent-pink)]">{liveCount}名</span>
-                  が配信中
-                </span>
-              ) : (
-                <span className="text-foreground/85">現在、配信中のメンバーはいません</span>
-              )}
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              全 {members.length} 名 / 1分ごとに自動更新
-            </p>
-          </div>
-          <Link
-            href="/members"
-            className="rounded-md border border-[var(--accent-kick)]/60 bg-[var(--accent-kick)]/10 px-5 py-2.5 text-sm font-bold tracking-wider text-[var(--accent-kick)] transition-all hover:bg-[var(--accent-kick)]/20"
-          >
-            メンバー →
-          </Link>
-        </div>
+        <LiveStatusCard />
       </section>
     </>
   );

@@ -15,17 +15,20 @@ export function SiteFooter() {
             </p>
           </div>
           <nav className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
+            <Link href="/" className="hover:text-[var(--accent-kick)]">
+              ホーム
+            </Link>
             <Link href="/members" className="hover:text-[var(--accent-kick)]">
-              MEMBERS
-            </Link>
-            <Link href="/rules" className="hover:text-[var(--accent-kick)]">
-              RULES
-            </Link>
-            <Link href="/contact" className="hover:text-[var(--accent-kick)]">
-              CONTACT
+              メンバー
             </Link>
             <Link href="/about" className="hover:text-[var(--accent-kick)]">
-              ABOUT
+              アバウト
+            </Link>
+            <Link href="/rules" className="hover:text-[var(--accent-kick)]">
+              ルール
+            </Link>
+            <Link href="/contact" className="hover:text-[var(--accent-kick)]">
+              お問い合わせ
             </Link>
           </nav>
         </div>
