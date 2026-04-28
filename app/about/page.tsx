@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "ABOUT / 裏キック団",
-  description: "裏キック団（URAKICK）について",
+  description: "裏キック団（The Back Kick Gang）について",
 };
 
 export default function AboutPage() {
@@ -11,8 +11,8 @@ export default function AboutPage() {
       <p className="text-xs font-bold tracking-[0.3em] text-[var(--accent-kick)]">
         ABOUT
       </p>
-      <h1 className="mt-2 text-4xl font-black tracking-tight sm:text-5xl">
-        URAKICK
+      <h1 className="mt-2 text-3xl font-black tracking-tight sm:text-4xl">
+        The Back Kick Gang
       </h1>
       <p className="mt-1 text-xl font-bold tracking-tight text-foreground/85">
         裏キック団

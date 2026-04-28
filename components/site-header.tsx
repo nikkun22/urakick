@@ -13,10 +13,10 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <span className="text-kick-soft text-xl font-black tracking-widest">
-            URAKICK
+          <span className="text-kick-soft text-base font-black tracking-tight sm:text-lg">
+            The Back Kick Gang
           </span>
-          <span className="hidden text-xs text-muted-foreground sm:inline">
+          <span className="hidden text-xs text-muted-foreground md:inline">
             裏キック団
           </span>
         </Link>

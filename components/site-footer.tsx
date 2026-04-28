@@ -7,7 +7,7 @@ export function SiteFooter() {
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div>
             <p className="text-base font-bold tracking-wide">
-              <span className="text-kick-soft">URAKICK</span>
+              <span className="text-kick-soft">The Back Kick Gang</span>
               <span className="ml-2 text-sm text-muted-foreground">裏キック団</span>
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
@@ -30,7 +30,7 @@ export function SiteFooter() {
           </nav>
         </div>
         <p className="text-xs text-muted-foreground/70">
-          © {new Date().getFullYear()} URAKICK / 裏キック団
+          © {new Date().getFullYear()} The Back Kick Gang / 裏キック団
         </p>
       </div>
     </footer>
