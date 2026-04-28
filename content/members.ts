@@ -32,11 +32,11 @@ export const members: Member[] = [
   {
     slug: "zenichi",
     name: "全一",
-    role: placeholderRole,
+    role: "裏キック団 / 会長",
     bio: placeholderBio,
     avatar: "https://picsum.photos/seed/urakick-zenichi/600/600",
     streamingPlatforms: [],
-    socials: [],
+    socials: [{ platform: "x", url: "https://x.com/zenitu1217" }],
   },
   {
     slug: "kuru",

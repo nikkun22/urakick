@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Member } from "@/content/members";
 import type { LiveStatus } from "@/lib/live-status";
+import { XIcon } from "@/components/x-icon";
 import { cn } from "@/lib/utils";
 
 const PLATFORM_LABEL: Record<string, string> = {
@@ -36,15 +37,22 @@ function LiveBadge({ status }: { status: LiveStatus }) {
   );
 }
 
-function CardInner({
+export function MemberCard({
   member,
   status,
 }: {
   member: Member;
   status: LiveStatus;
 }) {
+  const xSocial = member.socials.find((s) => s.platform === "x");
+
   return (
-    <>
+    <article
+      className={cn(
+        "card-elevated group relative flex flex-col overflow-hidden rounded-lg bg-card",
+        status.isLive && "live-pulse",
+      )}
+    >
       <div className="relative aspect-square overflow-hidden">
         <Image
           src={member.avatar}
@@ -65,18 +73,36 @@ function CardInner({
           </span>
         ) : null}
       </div>
-      <div className="space-y-2 p-4">
-        <div className="flex items-baseline justify-between gap-2">
-          <h3 className="text-lg font-bold tracking-tight">{member.name}</h3>
-          {member.handle ? (
-            <span className="font-mono text-xs text-muted-foreground">
-              {member.handle}
-            </span>
+
+      <div className="flex flex-1 flex-col gap-2 p-4">
+        <div className="flex items-start justify-between gap-2">
+          <div className="min-w-0">
+            <h3 className="truncate text-lg font-bold tracking-tight">
+              {member.name}
+            </h3>
+            {member.handle ? (
+              <p className="truncate font-mono text-xs text-muted-foreground">
+                {member.handle}
+              </p>
+            ) : null}
+          </div>
+          {xSocial ? (
+            <a
+              href={xSocial.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${member.name} の X プロフィール`}
+              className="shrink-0 rounded-md border border-border bg-background/40 p-2 text-muted-foreground transition-colors hover:border-foreground hover:bg-foreground/10 hover:text-foreground"
+            >
+              <XIcon size={14} />
+            </a>
           ) : null}
         </div>
+
         <p className="text-[11px] font-bold tracking-widest text-[var(--accent-kick)]">
           {member.role}
         </p>
+
         {status.isLive && status.title ? (
           <p className="line-clamp-2 text-sm text-foreground/90">
             🎙 {status.title}
@@ -86,37 +112,22 @@ function CardInner({
             {member.bio}
           </p>
         )}
+
+        {status.isLive && status.liveUrl ? (
+          <a
+            href={status.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center justify-center gap-2 rounded-md border border-[var(--accent-pink)]/60 bg-[var(--accent-pink)]/15 px-3 py-2 text-xs font-bold tracking-widest text-[var(--accent-pink)] transition-all hover:bg-[var(--accent-pink)]/25"
+          >
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-pink)] opacity-75" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--accent-pink)]" />
+            </span>
+            配信ページを開く →
+          </a>
+        ) : null}
       </div>
-    </>
-  );
-}
-
-export function MemberCard({
-  member,
-  status,
-}: {
-  member: Member;
-  status: LiveStatus;
-}) {
-  const baseClass =
-    "card-elevated group relative block overflow-hidden rounded-lg bg-card transition-all";
-
-  if (status.isLive && status.liveUrl) {
-    return (
-      <a
-        href={status.liveUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={cn(baseClass, "live-pulse")}
-      >
-        <CardInner member={member} status={status} />
-      </a>
-    );
-  }
-
-  return (
-    <div className={baseClass}>
-      <CardInner member={member} status={status} />
-    </div>
+    </article>
   );
 }

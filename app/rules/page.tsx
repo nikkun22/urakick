@@ -42,20 +42,18 @@ export default function RulesPage() {
         </p>
       </div>
 
-      <ol className="mt-12 space-y-6">
+      <ol className="mt-12 space-y-5">
         {RULES.map((rule, index) => (
           <li
             key={index}
-            className="card-elevated rounded-lg bg-card p-5 sm:p-6"
+            className="card-elevated rounded-lg bg-card p-6"
           >
-            <div className="flex items-baseline gap-4">
-              <span className="text-xl font-black tracking-tight text-[var(--accent-kick)] sm:text-2xl">
-                {index + 1}条
-              </span>
-              <p className="text-base leading-relaxed text-foreground/90 sm:text-lg">
-                {rule}
-              </p>
-            </div>
+            <p className="text-sm font-bold text-[var(--accent-kick)] sm:text-base">
+              第{index + 1}条
+            </p>
+            <p className="mt-3 text-base leading-relaxed text-foreground/95 sm:text-lg">
+              {rule}
+            </p>
           </li>
         ))}
       </ol>
