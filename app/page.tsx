@@ -1,57 +1,84 @@
 import { Hero } from "@/components/hero";
-import { MemberCard } from "@/components/member-card";
 import { members } from "@/content/members";
 import { getLiveStatusBulk } from "@/lib/live-status";
 import Link from "next/link";
 
 export const revalidate = 60;
 
+const ACTIVITIES = [
+  {
+    title: "Kick での日常配信",
+    body: "ふわっちで活動するメンバーが、Kick でも配信を行うことで Kick シーンを盛り上げています。雑談・ゲーム・音楽など、各メンバーの個性を活かした配信を毎日どこかで実施。",
+  },
+  {
+    title: "メンバー間のレイドパス文化",
+    body: "配信終了時のレイドパスを通じて、メンバー同士で視聴者を相互に送り合う応援文化を大切にしています。誕生日メンバーへのバースデーレイドパスは恒例。",
+  },
+  {
+    title: "全一会長を中心とした運営",
+    body: "全一会長を中心に、メンバー同士で揉めない・配信内での暴力行為禁止など、明確なルールを設けて健全な活動を継続しています。",
+  },
+];
+
 export default async function Home() {
-  const featured = members.slice(0, 6);
-  const statusMap = await getLiveStatusBulk(featured);
+  const statusMap = await getLiveStatusBulk(members);
   const liveCount = Array.from(statusMap.values()).filter((s) => s.isLive).length;
 
   return (
     <>
       <Hero />
 
-      <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-8 flex items-end justify-between gap-4">
+      <section className="mx-auto w-full max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mb-12">
+          <p className="text-xs font-bold tracking-[0.3em] text-[var(--accent-kick)]">
+            ACTIVITIES
+          </p>
+          <h2 className="mt-2 text-3xl font-black tracking-tight sm:text-4xl">
+            活動内容
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {ACTIVITIES.map((item) => (
+            <article
+              key={item.title}
+              className="card-elevated rounded-lg bg-card p-6"
+            >
+              <h3 className="text-lg font-bold tracking-tight">{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {item.body}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-5xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="card-elevated flex flex-col items-start justify-between gap-4 rounded-lg bg-card p-6 sm:flex-row sm:items-center sm:p-8">
           <div>
-            <p className="font-mono text-xs tracking-[0.4em] text-[var(--accent-pink)]">
-              // 01_CREW
+            <p className="text-xs font-bold tracking-[0.3em] text-[var(--accent-kick)]">
+              LIVE STATUS
             </p>
-            <h2 className="mt-1 text-3xl font-black tracking-tight sm:text-4xl">
-              MEMBERS
-            </h2>
-            <p className="mt-2 font-mono text-xs tracking-widest text-muted-foreground">
+            <p className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">
               {liveCount > 0 ? (
-                <span className="neon-pink-text">
-                  {liveCount} LIVE NOW
+                <span>
+                  <span className="text-[var(--accent-pink)]">{liveCount}名</span>
+                  が配信中
                 </span>
               ) : (
-                <span>NO ACTIVE BROADCAST</span>
+                <span className="text-foreground/85">現在、配信中のメンバーはいません</span>
               )}
-              <span className="mx-2 text-border">/</span>
-              <span>{members.length} MEMBERS</span>
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              全 {members.length} 名 / 1分ごとに自動更新
             </p>
           </div>
           <Link
             href="/members"
-            className="font-mono text-xs tracking-widest text-muted-foreground hover:text-[var(--accent-neon)]"
+            className="rounded-md border border-[var(--accent-kick)]/60 bg-[var(--accent-kick)]/10 px-5 py-2.5 text-sm font-bold tracking-wider text-[var(--accent-kick)] transition-all hover:bg-[var(--accent-kick)]/20"
           >
-            ALL MEMBERS →
+            メンバー一覧 →
           </Link>
-        </div>
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((member) => (
-            <MemberCard
-              key={member.slug}
-              member={member}
-              status={statusMap.get(member.slug) ?? { isLive: false }}
-            />
-          ))}
         </div>
       </section>
     </>

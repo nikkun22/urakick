@@ -15,13 +15,13 @@ const PLATFORM_LABEL: Record<string, string> = {
 function LiveBadge({ status }: { status: LiveStatus }) {
   if (!status.isLive) {
     return (
-      <span className="absolute left-3 top-3 rounded border border-border/60 bg-background/70 px-2 py-0.5 font-mono text-[10px] tracking-widest text-muted-foreground backdrop-blur">
+      <span className="absolute left-3 top-3 rounded border border-border/60 bg-background/70 px-2 py-0.5 text-[10px] font-bold tracking-widest text-muted-foreground backdrop-blur">
         OFFLINE
       </span>
     );
   }
   return (
-    <span className="absolute left-3 top-3 flex items-center gap-1.5 rounded border border-[var(--accent-pink)]/60 bg-background/80 px-2 py-0.5 font-mono text-[10px] tracking-widest text-[var(--accent-pink)] shadow-[0_0_12px_rgba(255,16,240,0.45)] backdrop-blur">
+    <span className="absolute left-3 top-3 flex items-center gap-1.5 rounded border border-[var(--accent-pink)]/70 bg-background/85 px-2 py-0.5 text-[10px] font-bold tracking-widest text-[var(--accent-pink)] live-pulse backdrop-blur">
       <span className="relative flex h-1.5 w-1.5">
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-pink)] opacity-75" />
         <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--accent-pink)]" />
@@ -60,7 +60,7 @@ function CardInner({
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
         <LiveBadge status={status} />
         {status.isLive && status.viewers !== undefined ? (
-          <span className="absolute right-3 top-3 rounded border border-border/60 bg-background/80 px-2 py-0.5 font-mono text-[10px] tracking-widest text-foreground/80 backdrop-blur">
+          <span className="absolute right-3 top-3 rounded border border-border/60 bg-background/85 px-2 py-0.5 text-[10px] font-bold tracking-widest text-foreground/85 backdrop-blur">
             👁 {status.viewers.toLocaleString()}
           </span>
         ) : null}
@@ -74,7 +74,7 @@ function CardInner({
             </span>
           ) : null}
         </div>
-        <p className="font-mono text-[11px] tracking-widest text-[var(--accent-pink)]">
+        <p className="text-[11px] font-bold tracking-widest text-[var(--accent-kick)]">
           {member.role}
         </p>
         {status.isLive && status.title ? (
@@ -99,7 +99,7 @@ export function MemberCard({
   status: LiveStatus;
 }) {
   const baseClass =
-    "glitch-border group relative block overflow-hidden rounded-lg bg-card transition-all";
+    "card-elevated group relative block overflow-hidden rounded-lg bg-card transition-all";
 
   if (status.isLive && status.liveUrl) {
     return (
@@ -107,10 +107,7 @@ export function MemberCard({
         href={status.liveUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={cn(
-          baseClass,
-          "ring-1 ring-[var(--accent-pink)]/50 hover:ring-[var(--accent-pink)]",
-        )}
+        className={cn(baseClass, "live-pulse")}
       >
         <CardInner member={member} status={status} />
       </a>

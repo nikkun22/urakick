@@ -7,7 +7,8 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "MEMBERS / 裏キック団",
-  description: "裏キック団 全メンバー一覧。配信中のメンバーは LIVE バッジ付きで表示。",
+  description:
+    "裏キック団 全メンバー一覧。配信中のメンバーは LIVE バッジ付きで表示し、クリックでそのまま配信ページへ移動できます。",
 };
 
 export default async function MembersPage() {
@@ -24,24 +25,29 @@ export default async function MembersPage() {
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <header className="mb-10 border-b border-border/60 pb-8">
-        <p className="font-mono text-xs tracking-[0.4em] text-[var(--accent-pink)]">
-          // ROSTER
+        <p className="text-xs font-bold tracking-[0.3em] text-[var(--accent-kick)]">
+          MEMBERS
         </p>
         <h1 className="mt-2 text-4xl font-black tracking-tight sm:text-5xl">
-          MEMBERS
+          メンバー一覧
         </h1>
-        <p className="mt-3 font-mono text-xs tracking-widest text-muted-foreground">
+        <p className="mt-3 text-sm text-muted-foreground">
+          配信中のメンバーは{" "}
+          <span className="font-bold text-[var(--accent-pink)]">LIVE</span>{" "}
+          バッジが付きます。カードをクリックでそのまま配信ページへ。
+        </p>
+        <p className="mt-3 text-xs text-muted-foreground/80">
           {liveCount > 0 ? (
-            <span className="neon-pink-text">
-              ● {liveCount} LIVE NOW
+            <span className="font-bold text-[var(--accent-pink)]">
+              ● {liveCount}名 配信中
             </span>
           ) : (
-            <span>○ NO ACTIVE BROADCAST</span>
+            <span>○ 現在配信中のメンバーはいません</span>
           )}
           <span className="mx-2 text-border">/</span>
-          <span>TOTAL {members.length} MEMBERS</span>
+          <span>全 {members.length} 名</span>
           <span className="mx-2 text-border">/</span>
-          <span className="text-muted-foreground/70">AUTO-REFRESH 60s</span>
+          <span>1分ごとに自動更新</span>
         </p>
       </header>
 

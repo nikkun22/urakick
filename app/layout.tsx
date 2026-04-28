@@ -19,11 +19,12 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "URAKICK / 裏キック団 公式サイト",
   description:
-    "アングラ配信者集団・裏キック団の公式サイト。メンバー情報、配信スケジュール、アーカイブを掲載。",
+    "ふわっちを主に活動しているメンバーが Kick を盛り上げるために、全一会長が設立した配信者集団。",
   metadataBase: new URL("https://urakick-gu8q.vercel.app"),
   openGraph: {
     title: "URAKICK / 裏キック団",
-    description: "アングラ配信者集団・裏キック団の公式サイト",
+    description:
+      "ふわっちを主に活動しているメンバーが Kick を盛り上げるために、全一会長が設立した配信者集団。",
     type: "website",
   },
 };
@@ -38,7 +39,7 @@ export default function RootLayout({
       lang="ja"
       className={`${notoSansJp.variable} ${jetBrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col scanlines">
+      <body className="min-h-full flex flex-col">
         <SiteHeader />
         <main className="flex-1 flex flex-col">{children}</main>
         <SiteFooter />
