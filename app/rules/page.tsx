@@ -36,9 +36,7 @@ export default function RulesPage() {
           とは、裏キック団の一員として必ず守らなければならない鉄則です。
         </p>
         <p>
-          ルールを破った者は
-          <span className="font-bold text-[var(--accent-pink)]">裏キック団裁判</span>
-          にてその責任を負い、相応の罰を受けることになります。
+          ルールを破った者は裏キック団で話し合いを行い、内容によっては責任を負い、相応の罰を受けることになります。
         </p>
       </div>
 

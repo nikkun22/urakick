@@ -41,12 +41,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-[16vw] font-black leading-[0.9] tracking-tight sm:text-[12vw] lg:text-[10rem]"
+          className="font-black leading-[1.05]"
         >
-          <span className="block text-kick-soft drop-shadow-[0_4px_24px_rgba(83,252,24,0.4)]">
-            URAKICK
+          <span className="block text-3xl tracking-tight text-kick-soft drop-shadow-[0_2px_12px_rgba(83,252,24,0.35)] sm:text-4xl md:text-5xl lg:text-6xl">
+            The Back Kick Gang
           </span>
-          <span className="mt-2 block text-2xl font-bold text-foreground/90 sm:text-3xl lg:text-4xl">
+          <span className="mt-2 block text-lg font-bold tracking-tight text-foreground/85 sm:text-xl lg:text-2xl">
             裏キック団
           </span>
         </motion.h1>
