@@ -20,7 +20,7 @@ async function fetchWithTimeout(url: string): Promise<Response | null> {
       signal: controller.signal,
       headers: {
         "User-Agent":
-          "Mozilla/5.0 (compatible; URAKICK-LiveStatus/1.0; +https://urakick.vercel.app)",
+          "Mozilla/5.0 (compatible; URAKICK-LiveStatus/1.0; +https://urakick-gu8q.vercel.app)",
         Accept: "application/json",
       },
       next: { revalidate: REVALIDATE_SECONDS },

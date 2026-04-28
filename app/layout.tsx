@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "URAKICK / 裏キック団 公式サイト",
   description:
     "アングラ配信者集団・裏キック団の公式サイト。メンバー情報、配信スケジュール、アーカイブを掲載。",
-  metadataBase: new URL("https://urakick.vercel.app"),
+  metadataBase: new URL("https://urakick-gu8q.vercel.app"),
   openGraph: {
     title: "URAKICK / 裏キック団",
     description: "アングラ配信者集団・裏キック団の公式サイト",
