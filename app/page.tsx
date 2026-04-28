@@ -54,28 +54,6 @@ export default async function Home() {
           ))}
         </div>
       </section>
-
-      <section className="mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <p className="font-mono text-xs tracking-[0.4em] text-[var(--accent-pink)]">
-            // 02_LATEST_BROADCAST
-          </p>
-          <h2 className="mt-1 text-3xl font-black tracking-tight sm:text-4xl">
-            ARCHIVE
-          </h2>
-        </div>
-        <div className="glitch-border rounded-lg bg-card p-8 text-center">
-          <p className="font-mono text-sm text-muted-foreground">
-            アーカイブは順次追加予定。
-            <Link
-              href="/archive"
-              className="ml-2 text-[var(--accent-neon)] underline-offset-4 hover:underline"
-            >
-              archive →
-            </Link>
-          </p>
-        </div>
-      </section>
     </>
   );
 }
