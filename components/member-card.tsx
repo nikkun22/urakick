@@ -118,7 +118,7 @@ export function MemberCard({
           ) : null}
           {kickPlatform ? (
             <p className="mt-1 truncate font-mono text-xs text-[var(--accent-kick)]/80">
-              @{kickPlatform.username}
+              {kickPlatform.username}
             </p>
           ) : null}
         </div>
