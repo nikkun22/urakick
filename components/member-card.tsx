@@ -106,9 +106,9 @@ export function MemberCard({
         )}
       </div>
 
-      <div className="flex flex-1 flex-col gap-1.5 p-3">
+      <div className="flex flex-1 flex-col gap-2 p-4">
         <div className="min-w-0">
-          <h3 className="font-display text-xl leading-tight text-foreground sm:text-2xl">
+          <h3 className="font-display text-3xl leading-tight text-foreground sm:text-4xl">
             {member.name}
           </h3>
           {member.handle ? (
