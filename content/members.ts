@@ -61,7 +61,7 @@ export const members: Member[] = [
     slug: "eseaka-nyan",
     name: "エセアカにゃん",
     role: memberRole,
-    avatar: avatarFor("eseakanyan2525"),
+    avatar: "/members/eseaka-nyan.png",
     streamingPlatforms: [
       {
         platform: "kick",
