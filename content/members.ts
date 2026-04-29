@@ -103,7 +103,7 @@ export const members: Member[] = [
     slug: "erupi",
     name: "えるぴ",
     role: memberRole,
-    avatar: avatarFor("erupi1022"),
+    avatar: "/members/erupi.jpg",
     streamingPlatforms: [
       {
         platform: "kick",
