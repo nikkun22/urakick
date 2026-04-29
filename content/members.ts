@@ -169,4 +169,18 @@ export const members: Member[] = [
     ],
     socials: [{ platform: "x", url: "https://x.com/kotakota4642" }],
   },
+  {
+    slug: "naka-chan",
+    name: "なかちゃん",
+    role: memberRole,
+    avatar: avatarFor("7980ken"),
+    streamingPlatforms: [
+      {
+        platform: "kick",
+        username: "naka7980naka",
+        url: "https://kick.com/naka7980naka",
+      },
+    ],
+    socials: [{ platform: "x", url: "https://x.com/7980ken" }],
+  },
 ];
