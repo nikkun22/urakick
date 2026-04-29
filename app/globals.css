@@ -94,4 +94,42 @@ body {
       0 0 32px rgba(239, 68, 68, 0.75),
       0 4px 20px rgba(0, 0, 0, 0.6);
   }
+
+  .marquee {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 16px,
+      black calc(100% - 16px),
+      transparent 100%
+    );
+  }
+
+  .marquee-track {
+    display: flex;
+    flex-shrink: 0;
+    gap: 2.5rem;
+    animation: marquee 22s linear infinite;
+    will-change: transform;
+  }
+
+  .marquee-track > * {
+    flex-shrink: 0;
+  }
+
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 1.25rem));
+    }
+  }
 }

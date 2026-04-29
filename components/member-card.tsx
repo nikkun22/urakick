@@ -124,9 +124,19 @@ export function MemberCard({
         </div>
 
         {status.isLive && status.title ? (
-          <p className="line-clamp-2 text-sm text-foreground/90">
-            🎙 {status.title}
-          </p>
+          <div className="marquee">
+            <div className="marquee-track">
+              <span className="whitespace-nowrap text-sm text-foreground/90">
+                🎙 {status.title}
+              </span>
+              <span
+                className="whitespace-nowrap text-sm text-foreground/90"
+                aria-hidden="true"
+              >
+                🎙 {status.title}
+              </span>
+            </div>
+          </div>
         ) : member.bio ? (
           <p className="line-clamp-2 text-sm text-muted-foreground">
             {member.bio}
