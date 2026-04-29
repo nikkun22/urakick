@@ -123,10 +123,6 @@ export function MemberCard({
           ) : null}
         </div>
 
-        <p className="text-[11px] font-bold tracking-widest text-[var(--accent-kick)]">
-          {member.role}
-        </p>
-
         {status.isLive && status.title ? (
           <p className="line-clamp-2 text-sm text-foreground/90">
             🎙 {status.title}
