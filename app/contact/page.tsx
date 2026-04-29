@@ -69,12 +69,12 @@ export default function ContactPage() {
               href={CHAIRMAN_X_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 rounded-md border border-foreground/30 bg-foreground/5 px-5 py-3 text-sm font-bold tracking-wider text-foreground transition-all hover:border-foreground/60 hover:bg-foreground/10"
+              className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-md border border-foreground/30 bg-foreground/5 px-5 py-3 text-sm font-bold tracking-wider text-foreground transition-all hover:border-foreground/60 hover:bg-foreground/10"
             >
               <XIcon size={18} />
               <span>{CHAIRMAN_X_HANDLE}</span>
-              <span className="text-xs text-muted-foreground">
-                （全一(ぜんいつ) X）
+              <span className="whitespace-nowrap text-xs font-normal text-muted-foreground">
+                （全一 / ぜんいつ）
               </span>
             </a>
           </div>
