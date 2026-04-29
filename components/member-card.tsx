@@ -116,6 +116,11 @@ export function MemberCard({
               {member.handle}
             </p>
           ) : null}
+          {kickPlatform ? (
+            <p className="mt-1 truncate font-mono text-xs text-[var(--accent-kick)]/80">
+              @{kickPlatform.username}
+            </p>
+          ) : null}
         </div>
 
         <p className="text-[11px] font-bold tracking-widest text-[var(--accent-kick)]">
