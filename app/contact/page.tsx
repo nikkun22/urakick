@@ -74,7 +74,7 @@ export default function ContactPage() {
               <XIcon size={18} />
               <span>{CHAIRMAN_X_HANDLE}</span>
               <span className="text-xs text-muted-foreground">
-                （全一団長 X）
+                （全一(ぜんいつ) X）
               </span>
             </a>
           </div>
