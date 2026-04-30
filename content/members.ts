@@ -131,7 +131,7 @@ export const members: Member[] = [
     slug: "maruco",
     name: "まるこ",
     role: memberRole,
-    avatar: "https://unavatar.io/maruco10",
+    avatar: avatarFor("xjapanlastgig"),
     streamingPlatforms: [
       {
         platform: "kick",
@@ -139,7 +139,7 @@ export const members: Member[] = [
         url: "https://kick.com/maruco10",
       },
     ],
-    socials: [],
+    socials: [{ platform: "x", url: "https://x.com/xjapanlastgig" }],
   },
   {
     slug: "naka-chan",
