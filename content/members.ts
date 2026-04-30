@@ -156,20 +156,6 @@ export const members: Member[] = [
     socials: [{ platform: "x", url: "https://x.com/endy_yokosuka" }],
   },
   {
-    slug: "kotacche",
-    name: "こたっちぇ",
-    role: memberRole,
-    avatar: avatarFor("kotakota4642"),
-    streamingPlatforms: [
-      {
-        platform: "kick",
-        username: "kotache",
-        url: "https://kick.com/kotache",
-      },
-    ],
-    socials: [{ platform: "x", url: "https://x.com/kotakota4642" }],
-  },
-  {
     slug: "maruco",
     name: "まるこ",
     role: memberRole,
