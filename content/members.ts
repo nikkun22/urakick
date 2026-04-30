@@ -155,4 +155,18 @@ export const members: Member[] = [
     ],
     socials: [{ platform: "x", url: "https://x.com/7980ken" }],
   },
+  {
+    slug: "oda-saya",
+    name: "おださや",
+    role: memberRole,
+    avatar: "/members/oda-saya.jpg",
+    streamingPlatforms: [
+      {
+        platform: "kick",
+        username: "sayachioda",
+        url: "https://kick.com/sayachioda",
+      },
+    ],
+    socials: [{ platform: "x", url: "https://x.com/odayakachansaya" }],
+  },
 ];
