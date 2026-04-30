@@ -169,4 +169,18 @@ export const members: Member[] = [
     ],
     socials: [{ platform: "x", url: "https://x.com/odayakachansaya" }],
   },
+  {
+    slug: "migi-chichi",
+    name: "右乳",
+    role: memberRole,
+    avatar: avatarFor("migi_fuwa"),
+    streamingPlatforms: [
+      {
+        platform: "kick",
+        username: "migichichi",
+        url: "https://kick.com/migichichi",
+      },
+    ],
+    socials: [{ platform: "x", url: "https://x.com/migi_fuwa" }],
+  },
 ];
