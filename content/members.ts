@@ -163,8 +163,8 @@ export const members: Member[] = [
     streamingPlatforms: [
       {
         platform: "kick",
-        username: "cotache",
-        url: "https://kick.com/cotache",
+        username: "kotache",
+        url: "https://kick.com/kotache",
       },
     ],
     socials: [{ platform: "x", url: "https://x.com/kotakota4642" }],
