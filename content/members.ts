@@ -44,20 +44,6 @@ export const members: Member[] = [
     socials: [{ platform: "x", url: "https://x.com/zenitu1217" }],
   },
   {
-    slug: "kuru",
-    name: "くる",
-    role: memberRole,
-    avatar: avatarFor("kurupaccho"),
-    streamingPlatforms: [
-      {
-        platform: "kick",
-        username: "kuru96",
-        url: "https://kick.com/kuru96",
-      },
-    ],
-    socials: [{ platform: "x", url: "https://x.com/kurupaccho" }],
-  },
-  {
     slug: "eseaka-nyan",
     name: "エセアカにゃん",
     role: memberRole,
@@ -70,20 +56,6 @@ export const members: Member[] = [
       },
     ],
     socials: [{ platform: "x", url: "https://x.com/eseakanyan2525" }],
-  },
-  {
-    slug: "seki-shingo",
-    name: "関慎吾",
-    role: memberRole,
-    avatar: avatarFor("supersekishingo"),
-    streamingPlatforms: [
-      {
-        platform: "kick",
-        username: "sekishingo0226",
-        url: "https://kick.com/sekishingo0226",
-      },
-    ],
-    socials: [{ platform: "x", url: "https://x.com/supersekishingo" }],
   },
   {
     slug: "occhichi-hime",
