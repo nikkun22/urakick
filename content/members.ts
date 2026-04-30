@@ -75,7 +75,7 @@ export const members: Member[] = [
     slug: "erupi",
     name: "えるぴ",
     role: memberRole,
-    avatar: "/members/erupi.jpg",
+    avatar: "/members/erupi.png",
     streamingPlatforms: [
       {
         platform: "kick",
