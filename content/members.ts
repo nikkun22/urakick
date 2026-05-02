@@ -183,4 +183,18 @@ export const members: Member[] = [
     ],
     socials: [{ platform: "x", url: "https://x.com/migi_fuwa" }],
   },
+  {
+    slug: "pompika-satoshi",
+    name: "ぽんぴかさとし",
+    role: memberRole,
+    avatar: avatarFor("PompikaSatoshi"),
+    streamingPlatforms: [
+      {
+        platform: "kick",
+        username: "pompikasatoshi",
+        url: "https://kick.com/pompikasatoshi",
+      },
+    ],
+    socials: [{ platform: "x", url: "https://x.com/PompikaSatoshi" }],
+  },
 ];
