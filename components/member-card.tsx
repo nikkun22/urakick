@@ -50,13 +50,27 @@ export function MemberCard({
     (p) => p.platform === "kick",
   );
 
+  const kickUrl =
+    kickPlatform?.url ??
+    member.streamingPlatforms[0]?.url;
+
   return (
     <article
       className={cn(
         "group relative flex flex-col overflow-hidden rounded-lg bg-card",
         status.isLive ? "live-border-red" : "card-elevated",
+        kickUrl && "cursor-pointer",
       )}
     >
+      {kickUrl && (
+        <a
+          href={kickUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${member.name} の Kick チャンネルを開く`}
+          className="absolute inset-0 z-0"
+        />
+      )}
       <div className="relative aspect-square overflow-hidden">
         <Image
           src={member.avatar}
@@ -79,7 +93,7 @@ export function MemberCard({
         ) : null}
 
         {(kickPlatform || xSocial) && (
-          <div className="absolute right-3 bottom-3 flex items-center gap-2">
+          <div className="absolute right-3 bottom-3 z-10 flex items-center gap-2">
             {kickPlatform ? (
               <a
                 href={kickPlatform.url}
@@ -148,7 +162,7 @@ export function MemberCard({
             href={status.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-flex items-center justify-center gap-2 rounded-md border border-[var(--accent-pink)]/60 bg-[var(--accent-pink)]/15 px-3 py-2 text-xs font-bold tracking-widest text-[var(--accent-pink)] transition-all hover:bg-[var(--accent-pink)]/25"
+            className="relative z-10 mt-2 inline-flex items-center justify-center gap-2 rounded-md border border-[var(--accent-pink)]/60 bg-[var(--accent-pink)]/15 px-3 py-2 text-xs font-bold tracking-widest text-[var(--accent-pink)] transition-all hover:bg-[var(--accent-pink)]/25"
           >
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-pink)] opacity-75" />
