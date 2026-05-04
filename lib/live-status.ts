@@ -62,12 +62,59 @@ async function checkKick(handle: StreamingHandle): Promise<LiveStatus | null> {
   }
 }
 
+async function checkYouTube(
+  handle: StreamingHandle,
+): Promise<LiveStatus | null> {
+  const apiKey = process.env.YOUTUBE_API_KEY;
+  if (!apiKey) return null;
+
+  // Resolve channel ID: if username starts with "UC" treat as channel ID, otherwise resolve via handle
+  let channelId = handle.username;
+  if (!handle.username.startsWith("UC")) {
+    const resolveUrl = `https://www.googleapis.com/youtube/v3/channels?part=id&forHandle=${encodeURIComponent(handle.username)}&key=${apiKey}`;
+    const resolveRes = await fetchWithTimeout(resolveUrl);
+    if (!resolveRes || !resolveRes.ok) return null;
+    try {
+      const data = (await resolveRes.json()) as { items?: { id: string }[] };
+      channelId = data.items?.[0]?.id ?? "";
+      if (!channelId) return null;
+    } catch {
+      return null;
+    }
+  }
+
+  const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${encodeURIComponent(channelId)}&type=video&eventType=live&key=${apiKey}`;
+  const res = await fetchWithTimeout(searchUrl);
+  if (!res || !res.ok) return null;
+  try {
+    const data = (await res.json()) as {
+      items?: {
+        id?: { videoId?: string };
+        snippet?: { title?: string; thumbnails?: { medium?: { url?: string } } };
+      }[];
+    };
+    const item = data.items?.[0];
+    if (!item?.id?.videoId) return null;
+    return {
+      isLive: true,
+      platform: "youtube",
+      liveUrl: handle.url,
+      title: item.snippet?.title,
+      thumbnail: item.snippet?.thumbnails?.medium?.url ?? undefined,
+    };
+  } catch {
+    return null;
+  }
+}
+
 async function checkPlatform(
   handle: StreamingHandle,
 ): Promise<LiveStatus | null> {
   switch (handle.platform) {
     case "kick":
       return checkKick(handle);
+    case "youtube":
+      return checkYouTube(handle);
     default:
       return null;
   }

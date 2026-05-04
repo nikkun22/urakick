@@ -95,7 +95,7 @@
 
 **使える `platform` の値**:
 - `"kick"` — Kick（ライブ状態の自動取得に対応）
-- `"youtube"` — YouTube Live（【要実装】）
+- `"youtube"` — YouTube Live（ライブ状態の自動取得に対応）
 - `"twitch"` — Twitch（【要実装】）
 - `"fuwacchi"` — ふわっち（【要実装】）
 - `"niconico"` — ニコニコ生放送（【要実装】）
